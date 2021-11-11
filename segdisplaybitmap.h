@@ -16,7 +16,6 @@ public:
         {
             rgba_bitmap[x_pos] = rgba_white;
         }
-
         // Lookup the 7 seg display corresponding to each of the AssetID digits
         // and store the x-offset of each black bit.
         for (unsigned u = 0; u < aid.get_width(); u++)

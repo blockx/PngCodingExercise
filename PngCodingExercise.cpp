@@ -41,7 +41,7 @@ int main()
         }
     }
 
-    // For each file line create an SVG file and write the data as per spec
+    // For each file line create a .PNG file and write the data as per spec
     for (auto s : file_lines)
     {
 #if 1

@@ -9,12 +9,12 @@ class AssetID
 public:
     AssetID(std::string s)
     {
-        unsigned long val = std::stoul(s);  // throws if string doesn't start with numeric
+        unsigned long val = std::stoul(s);  // stoul() throws if string doesn't start with numeric
 
         for (unsigned i = csum_width; i < get_width(); i++)
         {
-            id_digits[5 - i + 2] = val % 10;    // digits given by remainder when residual val divided by 10
-            val /= 10;                  // prep for next digit    
+            id_digits[(get_width() - 1) + csum_width - i] = val % 10;   // digits given by remainder when residual val divided by 10
+            val /= 10;      // prep for next digit    
         }
 
         // Validate val as originally lying between 0 and 9999 by ensuring that it does not need more than 4 decimal digits
